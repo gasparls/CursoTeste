@@ -1,0 +1,9 @@
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\obj\Debug\netstandard2.0\ISUB.domain.csproj.CoreCompileInputs.cache
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\obj\Debug\netstandard2.0\ISUB.domain.AssemblyInfoInputs.cache
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\obj\Debug\netstandard2.0\ISUB.domain.AssemblyInfo.cs
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\bin\Debug\netstandard2.0\ISUB.domain.deps.json
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\bin\Debug\netstandard2.0\ISUB.domain.dll
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\bin\Debug\netstandard2.0\ISUB.domain.pdb
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\obj\Debug\netstandard2.0\ISUB.domain.dll
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\obj\Debug\netstandard2.0\ISUB.domain.pdb
+C:\Users\lsgga\Downloads\7182-master (1)\7182-master\Novo\ISUB.Domain\obj\Debug\netstandard2.0\ISUB.Domain.csprojAssemblyReference.cache

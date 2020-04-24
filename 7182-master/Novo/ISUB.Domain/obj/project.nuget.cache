@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "HCgTOHkGCDyovpysOXi2lgSl7IbZh59mnBLuwCWRJq5EPI5KlBUQomsKQ6t9NRFu+P3+Apc5OnWLdzw+nXN6vQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lsgga\\Downloads\\7182-master (1)\\7182-master\\Novo\\ISUB.Domain\\ISUB.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lsgga\\.nuget\\packages\\flunt\\1.0.4\\flunt.1.0.4.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
