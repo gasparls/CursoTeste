@@ -82,5 +82,22 @@ namespace ISUB.Tests.Domain
             // Assert
             Assert.AreEqual(dataEsperada, dataPlanejada);
         }
+
+        [TestMethod]
+        public void TestSomaPeriodicidadeComDateTimeDeveSerComutativa()
+        {
+            // Arrange
+            var dataInicio = new DateTime(2020, 04, 29);
+            var seteDias = new Periodicidade(7, dias: true);
+            var dataEsperada = new DateTime(2020, 05, 06);
+
+            // Act
+            var dataPlanejada1 = dataInicio + seteDias;
+            var dataPlanejada2 = seteDias + dataInicio;
+
+            // Assert
+            Assert.AreEqual(dataEsperada, dataPlanejada1);
+            Assert.AreEqual(dataEsperada, dataPlanejada2);
+        }
     }
 }

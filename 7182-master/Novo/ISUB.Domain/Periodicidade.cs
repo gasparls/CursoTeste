@@ -43,5 +43,10 @@ namespace ISUB.Domain
                 return data.AddMonths(periodicidade.duracao);
             }
         }
+
+        public static DateTime operator +(Periodicidade periodicidade, DateTime data)
+        {
+            return data + periodicidade;
+        }
     }
 }
