@@ -31,5 +31,17 @@ namespace ISUB.Domain
             }
             return strDuracao;
         }
+
+        public static DateTime operator +(DateTime data, Periodicidade periodicidade)
+        {
+            if (periodicidade.duracaoEmDias)
+            {
+                return data.AddDays(periodicidade.duracao);
+            }
+            else
+            {
+                return data.AddMonths(periodicidade.duracao);
+            }
+        }
     }
 }

@@ -52,5 +52,20 @@ namespace ISUB.Tests.Domain
             Assert.ThrowsException<ArgumentException>(() => new Periodicidade(-1),
                 "Periodicidade não pode ser negativa.");
         }
+
+        [TestMethod]
+        public void TestSomaPeriodicidadeDateTime()
+        {
+            // Arrange
+            var dataInicio = new DateTime(2020, 05, 09);
+            var dozeMeses = new Periodicidade(12);
+            var dataEsperada = new DateTime(2021, 05, 09);
+
+            // Act
+            var dataPlanejada = dataInicio + dozeMeses;
+
+            // Assert
+            Assert.AreEqual(dataEsperada, dataPlanejada);
+        }
     }
 }
