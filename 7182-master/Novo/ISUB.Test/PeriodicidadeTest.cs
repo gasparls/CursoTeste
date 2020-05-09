@@ -54,7 +54,7 @@ namespace ISUB.Tests.Domain
         }
 
         [TestMethod]
-        public void TestSomaPeriodicidadeDateTime()
+        public void TestSomaPeriodicidadeMesesComDateTime()
         {
             // Arrange
             var dataInicio = new DateTime(2020, 05, 09);
@@ -63,6 +63,21 @@ namespace ISUB.Tests.Domain
 
             // Act
             var dataPlanejada = dataInicio + dozeMeses;
+
+            // Assert
+            Assert.AreEqual(dataEsperada, dataPlanejada);
+        }
+
+        [TestMethod]
+        public void TestSomaPeriodicidadeDiasComDateTime()
+        {
+            // Arrange
+            var dataInicio = new DateTime(2020, 04, 29);
+            var seteDias = new Periodicidade(7, dias: true);
+            var dataEsperada = new DateTime(2020, 05, 06);
+
+            // Act
+            var dataPlanejada = dataInicio + seteDias;
 
             // Assert
             Assert.AreEqual(dataEsperada, dataPlanejada);
