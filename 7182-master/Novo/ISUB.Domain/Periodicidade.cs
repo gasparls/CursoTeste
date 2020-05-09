@@ -13,14 +13,16 @@
 
         public override string ToString()
         {
+            var strDuracao = $"{duracao} ";
             if (duracaoEmDias)
             {
-                return $"{duracao} dias";
+                strDuracao += (duracao > 1) ? "dias" : "dia";
             }
             else
             {
-                return $"{duracao} meses";
+                strDuracao += (duracao > 1) ? "meses" : "mês";
             }
+            return strDuracao;
         }
     }
 }

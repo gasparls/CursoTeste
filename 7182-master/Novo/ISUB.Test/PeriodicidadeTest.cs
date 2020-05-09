@@ -29,5 +29,17 @@ namespace ISUB.Tests.Domain
             Assert.AreEqual("7 dias", seteDias.ToString());
             Assert.AreEqual("90 dias", noventaDias.ToString());
         }
+
+        [TestMethod]
+        public void TestExibicaoPeriodicidadeNoSingular()
+        {
+            // Arrange
+            var umMes = new Periodicidade(1, dias: false);
+            var umDia = new Periodicidade(1, dias: true);
+
+            // Act & Assert
+            Assert.AreEqual("1 mês", umMes.ToString());
+            Assert.AreEqual("1 dia", umDia.ToString());
+        }
     }
 }
