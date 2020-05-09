@@ -99,5 +99,43 @@ namespace ISUB.Tests.Domain
             Assert.AreEqual(dataEsperada, dataPlanejada1);
             Assert.AreEqual(dataEsperada, dataPlanejada2);
         }
+
+        [TestMethod]
+        public void Test_30Dias_Nem_Sempre_Igual_UmMes()
+        {
+            // Arrange
+            var dataInicio = new DateTime(2020, 05, 09);
+            var trintaDias = new Periodicidade(30, dias: true);
+            var dataEsperada1 = new DateTime(2020, 06, 08);
+            var umMes = new Periodicidade(1);
+            var dataEsperada2 = new DateTime(2020, 06, 09);
+
+            // Act
+            var dataPlanejada1 = dataInicio + trintaDias;
+            var dataPlanejada2 = dataInicio + umMes;
+
+            // Assert
+            Assert.AreEqual(dataEsperada1, dataPlanejada1);
+            Assert.AreEqual(dataEsperada2, dataPlanejada2);
+        }
+
+        [TestMethod]
+        public void Test_12Meses_Nem_Sempre_Igual_365Dias()
+        {
+            // Arrange
+            var dataInicio = new DateTime(2019, 05, 09);
+            var umAno = new Periodicidade(365, dias: true);
+            var dataEsperada1 = new DateTime(2020, 05, 08); // 2020 é bissexto.
+            var dozeMeses = new Periodicidade(12);
+            var dataEsperada2 = new DateTime(2020, 05, 09);
+
+            // Act
+            var dataPlanejada1 = dataInicio + umAno;
+            var dataPlanejada2 = dataInicio + dozeMeses;
+
+            // Assert
+            Assert.AreEqual(dataEsperada1, dataPlanejada1);
+            Assert.AreEqual(dataEsperada2, dataPlanejada2);
+        }
     }
 }
