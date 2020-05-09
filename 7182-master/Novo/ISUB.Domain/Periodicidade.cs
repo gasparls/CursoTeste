@@ -3,15 +3,24 @@
     public class Periodicidade
     {
         private int duracao;
+        private bool duracaoEmDias;
 
-        public Periodicidade(int duracao)
+        public Periodicidade(int duracao, bool dias = false)
         {
             this.duracao = duracao;
+            this.duracaoEmDias = dias;
         }
 
         public override string ToString()
         {
-            return $"{duracao} meses";
+            if (duracaoEmDias)
+            {
+                return $"{duracao} dias";
+            }
+            else
+            {
+                return $"{duracao} meses";
+            }
         }
     }
 }
