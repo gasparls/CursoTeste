@@ -2,16 +2,16 @@
 {
     public class Periodicidade
     {
-        private int v;
+        private int duracao;
 
-        public Periodicidade(int v)
+        public Periodicidade(int duracao)
         {
-            this.v = v;
+            this.duracao = duracao;
         }
 
         public override string ToString()
         {
-            return "5 meses";
+            return $"{duracao} meses";
         }
     }
 }

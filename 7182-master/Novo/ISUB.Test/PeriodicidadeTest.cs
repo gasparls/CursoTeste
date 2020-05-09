@@ -10,10 +10,12 @@ namespace ISUB.Tests.Domain
         public void TestExibicaoPeriodicidadeMeses()
         {
             // Arrange
-            var periodicidade = new Periodicidade(5);
+            var cincoMeses = new Periodicidade(5);
+            var sessentaMeses = new Periodicidade(60);
 
             // Act & Assert
-            Assert.AreEqual("5 meses", periodicidade.ToString());
+            Assert.AreEqual("5 meses", cincoMeses.ToString());
+            Assert.AreEqual("60 meses", sessentaMeses.ToString());
         }
     }
 }
