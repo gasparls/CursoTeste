@@ -1,4 +1,6 @@
-﻿namespace ISUB.Domain
+﻿using System;
+
+namespace ISUB.Domain
 {
     public class Periodicidade
     {
@@ -7,6 +9,11 @@
 
         public Periodicidade(int duracao, bool dias = false)
         {
+            if (duracao < 1)
+            {
+                var message = $"Periodicidade deve ser positiva. Duração informada: {duracao}.";
+                throw new ArgumentException(message);
+            }
             this.duracao = duracao;
             this.duracaoEmDias = dias;
         }

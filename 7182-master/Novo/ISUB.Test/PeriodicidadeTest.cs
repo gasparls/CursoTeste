@@ -1,5 +1,6 @@
 ﻿using ISUB.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace ISUB.Tests.Domain
 {
@@ -40,6 +41,16 @@ namespace ISUB.Tests.Domain
             // Act & Assert
             Assert.AreEqual("1 mês", umMes.ToString());
             Assert.AreEqual("1 dia", umDia.ToString());
+        }
+
+        [TestMethod]
+        public void TestPeriodicidadeDeveSerPositiva()
+        {
+            // Arrange / Act / Assert
+            Assert.ThrowsException<ArgumentException>(() => new Periodicidade(0),
+                "Periodicidade não pode ser zero.");
+            Assert.ThrowsException<ArgumentException>(() => new Periodicidade(-1),
+                "Periodicidade não pode ser negativa.");
         }
     }
 }
