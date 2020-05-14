@@ -137,5 +137,31 @@ namespace ISUB.Tests.Domain
             Assert.AreEqual(dataEsperada1, dataPlanejada1);
             Assert.AreEqual(dataEsperada2, dataPlanejada2);
         }
+
+        [TestMethod]
+        public void TestIgualdade()
+        {
+            // Arrange
+            var periodicidade = new Periodicidade(365, dias: true);
+            var periodicidadeIgual = new Periodicidade(365, dias: true);
+
+            // Act & Assert
+            Assert.IsTrue(periodicidade.Equals(periodicidadeIgual));
+            Assert.IsTrue(periodicidade == periodicidadeIgual);
+            Assert.AreEqual(periodicidade.GetHashCode(), periodicidadeIgual.GetHashCode());
+        }
+
+        [TestMethod]
+        public void TestDesigualdade()
+        {
+            // Arrange
+            var periodicidade = new Periodicidade(365, dias: true);
+            var periodicidadeDiferente = new Periodicidade(12, dias: false);
+
+            // Act & Assert
+            Assert.IsFalse(periodicidade.Equals(periodicidadeDiferente));
+            Assert.IsTrue(periodicidade != periodicidadeDiferente);
+            Assert.AreNotEqual(periodicidade.GetHashCode(), periodicidadeDiferente.GetHashCode());
+        }
     }
 }

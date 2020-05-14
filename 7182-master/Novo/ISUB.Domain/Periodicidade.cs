@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ISUB.Domain
 {
@@ -16,6 +17,21 @@ namespace ISUB.Domain
             }
             this.duracao = duracao;
             this.duracaoEmDias = dias;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Periodicidade periodicidade &&
+                   duracao == periodicidade.duracao &&
+                   duracaoEmDias == periodicidade.duracaoEmDias;
+        }
+
+        public override int GetHashCode()
+        {
+            int hashCode = 1034465429;
+            hashCode = hashCode * -1521134295 + duracao.GetHashCode();
+            hashCode = hashCode * -1521134295 + duracaoEmDias.GetHashCode();
+            return hashCode;
         }
 
         public override string ToString()
@@ -47,6 +63,16 @@ namespace ISUB.Domain
         public static DateTime operator +(Periodicidade periodicidade, DateTime data)
         {
             return data + periodicidade;
+        }
+
+        public static bool operator ==(Periodicidade left, Periodicidade right)
+        {
+            return EqualityComparer<Periodicidade>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Periodicidade left, Periodicidade right)
+        {
+            return !(left == right);
         }
     }
 }
