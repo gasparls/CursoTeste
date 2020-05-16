@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ISUB.Domain;
 using ISUB.Domain.Entities;
 using ISUB.Domain.Enum;
 using ISUB.Domain.Repositories.Interface;
+using System;
+using System.Collections.Generic;
 
 namespace ISUB.Test.Repositories
 {
@@ -15,12 +15,18 @@ namespace ISUB.Test.Repositories
         {
             var procedimentos = new List<Procedimento>();
 
-            Procedimentos.Add(new Procedimento("TEADF", 12, AreaNegocio.Flexivel, true));
-            Procedimentos.Add(new Procedimento("PIDF-1", 24, AreaNegocio.Rigido, true));
-            Procedimentos.Add(new Procedimento("PIDF-2", 36, AreaNegocio.TopSide, true));
-            Procedimentos.Add(new Procedimento("PIDR", 48, AreaNegocio.Faixa, true));
-            Procedimentos.Add(new Procedimento("EQSB", 60, AreaNegocio.Equipamento, true));
-            Procedimentos.Add(new Procedimento("PIG", 12, AreaNegocio.Flexivel, true));
+            Procedimentos.Add(
+                new Procedimento("TEADF", new PeriodicidadeMeses(12), AreaNegocio.Flexivel, true));
+            Procedimentos.Add(
+                new Procedimento("PIDF-1", new PeriodicidadeMeses(24), AreaNegocio.Rigido, true));
+            Procedimentos.Add(
+                new Procedimento("PIDF-2", new PeriodicidadeMeses(36), AreaNegocio.TopSide, true));
+            Procedimentos.Add(
+                new Procedimento("PIDR", new PeriodicidadeMeses(48), AreaNegocio.Faixa, true));
+            Procedimentos.Add(
+                new Procedimento("EQSB", new PeriodicidadeMeses(60), AreaNegocio.Equipamento, true));
+            Procedimentos.Add(
+                new Procedimento("PIG", new PeriodicidadeMeses(12), AreaNegocio.Flexivel, true));
 
             this.Procedimentos = procedimentos;
         }
@@ -28,7 +34,7 @@ namespace ISUB.Test.Repositories
         public IEnumerable<Procedimento> Get(IEnumerable<Guid> ids)
         {
             var Procedimentos = new List<Procedimento>();
-            Procedimentos.Add(new Procedimento("TEADF", 12, AreaNegocio.Flexivel, true));
+            Procedimentos.Add(new Procedimento("TEADF", new PeriodicidadeMeses(12), AreaNegocio.Flexivel, true));
             return Procedimentos;
         }
     }

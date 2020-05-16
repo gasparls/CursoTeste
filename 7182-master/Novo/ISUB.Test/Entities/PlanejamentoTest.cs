@@ -10,14 +10,14 @@ namespace ISUB.Tests.Domain
     [TestClass]
     public class PlanejamentoTests
     {
-        private Procedimento _procedimento = new Procedimento("TEADF", 12, AreaNegocio.Flexivel, true);
+        private Procedimento _procedimento = new Procedimento("TEADF", new PeriodicidadeMeses(12), AreaNegocio.Flexivel, true);
         private Objeto _objeto = new Objeto(AreaNegocio.Flexivel, "TR500101");
 
         [TestMethod]
         [TestCategory("Domain")]
         public void Dado_um_novo_planejamento_valido_ele_deve_gerar_um_numero_com_8_caracteres()
         {
-            Procedimento _procedimento = new Procedimento("TEADF", 12, AreaNegocio.Flexivel, true);
+            Procedimento _procedimento = new Procedimento("TEADF", new PeriodicidadeMeses(12), AreaNegocio.Flexivel, true);
             Objeto _objeto = new Objeto(AreaNegocio.Flexivel, "TR500101");
             List<Objeto> _objetos = new List<Objeto>();
             _objetos.Add(_objeto);
