@@ -5,7 +5,7 @@ namespace ISUB.Domain.Entities
 {
     public class Procedimento : Entity
     {
-        public Procedimento(string nome, int periodicidadePadrao, AreaNegocio areaNegocio, bool executaVariasVezes)
+        public Procedimento(string nome, PeriodicidadeMeses periodicidadePadrao, AreaNegocio areaNegocio, bool executaVariasVezes)
         {
             AddNotifications(
                 new Contract()
@@ -22,7 +22,7 @@ namespace ISUB.Domain.Entities
         }
 
         public string Nome { get; private set; }
-        public int PeriodicidadePadrao { get; private set; }
+        public PeriodicidadeMeses PeriodicidadePadrao { get; private set; }
         public AreaNegocio AreaNegocio { get; private set; }
         public bool ExecutaVariasVezes { get; private set; }
     }
