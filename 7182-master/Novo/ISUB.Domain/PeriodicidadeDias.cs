@@ -13,14 +13,9 @@ namespace ISUB.Domain
             return strDuracao;
         }
 
-        public static DateTime operator +(DateTime data, PeriodicidadeDias periodicidade)
+        protected override DateTime SomarComDateTime(DateTime data)
         {
-            return data.AddDays(periodicidade.duracao);
-        }
-
-        public static DateTime operator +(PeriodicidadeDias periodicidade, DateTime data)
-        {
-            return data + periodicidade;
+            return data.AddDays(duracao);
         }
     }
 }

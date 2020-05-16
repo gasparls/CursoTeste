@@ -3,12 +3,11 @@ using System.Collections.Generic;
 
 namespace ISUB.Domain
 {
-    public class Periodicidade
+    public abstract class Periodicidade
     {
         protected readonly int duracao;
-        private bool duracaoEmDias;
 
-        public Periodicidade(int duracao, bool dias = false)
+        public Periodicidade(int duracao)
         {
             if (duracao < 1)
             {
@@ -16,53 +15,31 @@ namespace ISUB.Domain
                 throw new ArgumentException(message);
             }
             this.duracao = duracao;
-            this.duracaoEmDias = dias;
         }
 
         public override bool Equals(object obj)
         {
             return obj is Periodicidade periodicidade &&
-                   duracao == periodicidade.duracao &&
-                   duracaoEmDias == periodicidade.duracaoEmDias;
+                   duracao == periodicidade.duracao;
         }
 
         public override int GetHashCode()
         {
             int hashCode = 1034465429;
             hashCode = hashCode * -1521134295 + duracao.GetHashCode();
-            hashCode = hashCode * -1521134295 + duracaoEmDias.GetHashCode();
             return hashCode;
         }
 
-        public override string ToString()
-        {
-            var strDuracao = $"{duracao} ";
-            if (duracaoEmDias)
-            {
-                strDuracao += (duracao > 1) ? "dias" : "dia";
-            }
-            else
-            {
-                strDuracao += (duracao > 1) ? "meses" : "mês";
-            }
-            return strDuracao;
-        }
+        protected abstract DateTime SomarComDateTime(DateTime data);
 
         public static DateTime operator +(DateTime data, Periodicidade periodicidade)
         {
-            if (periodicidade.duracaoEmDias)
-            {
-                return data.AddDays(periodicidade.duracao);
-            }
-            else
-            {
-                return data.AddMonths(periodicidade.duracao);
-            }
+            return periodicidade.SomarComDateTime(data);
         }
 
         public static DateTime operator +(Periodicidade periodicidade, DateTime data)
         {
-            return data + periodicidade;
+            return periodicidade.SomarComDateTime(data);
         }
 
         public static bool operator ==(Periodicidade left, Periodicidade right)

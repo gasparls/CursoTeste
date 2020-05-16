@@ -22,7 +22,7 @@ namespace ISUB.Tests.Domain
             List<Objeto> _objetos = new List<Objeto>();
             _objetos.Add(_objeto);
 
-            var planejamento = new Planejamento(_objetos, _procedimento, new DateTime(2018, 01, 15), new Periodicidade(12));
+            var planejamento = new Planejamento(_objetos, _procedimento, new DateTime(2018, 01, 15), new PeriodicidadeMeses(12));
             Assert.AreEqual(36, planejamento.Id.ToString().Length);
         }
         /*

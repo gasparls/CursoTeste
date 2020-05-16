@@ -16,7 +16,7 @@ namespace ISUB.Test.Repositories
 
         public Planejamento Get(Guid Id)
         {
-            var planejamento = new Planejamento(_objetos, _procedimento, new DateTime(2018, 01, 15), new Periodicidade(12));
+            var planejamento = new Planejamento(_objetos, _procedimento, new DateTime(2018, 01, 15), new PeriodicidadeMeses(12));
             return planejamento;
         }
 

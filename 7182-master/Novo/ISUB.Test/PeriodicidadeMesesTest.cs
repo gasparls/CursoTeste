@@ -23,7 +23,7 @@ namespace ISUB.Tests.Domain
         public void TestExibicaoPeriodicidadeNoSingular()
         {
             // Arrange
-            var umMes = new Periodicidade(1, dias: false);
+            var umMes = new PeriodicidadeMeses(1);
 
             // Act & Assert
             Assert.AreEqual("1 mês", umMes.ToString());
