@@ -82,6 +82,7 @@ namespace ISUB.Tests.Domain
             Assert.IsTrue(periodicidade.Equals(periodicidadeIgual));
             Assert.IsTrue(periodicidade == periodicidadeIgual);
             Assert.AreEqual(periodicidade.GetHashCode(), periodicidadeIgual.GetHashCode());
+            Assert.AreNotSame(periodicidade, periodicidadeIgual);
         }
 
         [TestMethod]
@@ -89,7 +90,7 @@ namespace ISUB.Tests.Domain
         {
             // Arrange
             var periodicidade = new PeriodicidadeDias(365);
-            var periodicidadeDiferente = new PeriodicidadeMeses(12);
+            var periodicidadeDiferente = new PeriodicidadeDias(360);
 
             // Act & Assert
             Assert.IsFalse(periodicidade.Equals(periodicidadeDiferente));
