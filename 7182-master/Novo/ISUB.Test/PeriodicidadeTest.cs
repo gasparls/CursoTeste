@@ -44,5 +44,17 @@ namespace ISUB.Tests.Domain
             Assert.AreEqual(dataEsperada1, dataPlanejada1);
             Assert.AreEqual(dataEsperada2, dataPlanejada2);
         }
+
+        [TestMethod]
+        public void TestPeriodicidadeDiasMesesComValorDuracaoIgualDevemSerDiferentes()
+        {
+            // Arrange
+            var sessentaMeses = new PeriodicidadeMeses(60);
+            var sessentaDias = new PeriodicidadeDias(60);
+
+            // Act & Assert
+            Assert.AreNotEqual(sessentaMeses, sessentaDias);
+            Assert.AreNotEqual(sessentaMeses.GetHashCode(), sessentaDias.GetHashCode());
+        }
     }
 }

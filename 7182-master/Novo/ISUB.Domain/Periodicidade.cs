@@ -20,13 +20,15 @@ namespace ISUB.Domain
         public override bool Equals(object obj)
         {
             return obj is Periodicidade periodicidade &&
-                   duracao == periodicidade.duracao;
+                   duracao == periodicidade.duracao &&
+                   GetType() == periodicidade.GetType();
         }
 
         public override int GetHashCode()
         {
             int hashCode = 1034465429;
             hashCode = hashCode * -1521134295 + duracao.GetHashCode();
+            hashCode = hashCode * -1521134295 + GetType().GetHashCode();
             return hashCode;
         }
 
