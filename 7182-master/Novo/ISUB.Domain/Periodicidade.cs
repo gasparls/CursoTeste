@@ -5,7 +5,7 @@ namespace ISUB.Domain
 {
     public class Periodicidade
     {
-        private int duracao;
+        protected readonly int duracao;
         private bool duracaoEmDias;
 
         public Periodicidade(int duracao, bool dias = false)
